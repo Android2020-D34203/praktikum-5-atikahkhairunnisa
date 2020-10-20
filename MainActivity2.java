@@ -1,0 +1,27 @@
+package id.ac.id.telkomuniversity.tass.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity2 extends AppCompatActivity {
+
+    TextView textusername, textpassword;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        textusername = findViewById(R.id.editTextTextPersonName);
+        textpassword = findViewById(R.id.editTextTextPassword2);
+        Intent intent = getIntent();
+        String User = getIntent().getExtras().getString("username");
+        String Password = getIntent().getExtras().getString("password");
+        textusername.setText("Username : " + User);
+        textpassword.setText("Password : " + Password);
+
+
+    }
+}
